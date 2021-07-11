@@ -9,7 +9,6 @@ require (
 	github.com/gorilla/handlers v1.5.1 // indirect
 	github.com/gorilla/mux v1.8.0
 	github.com/jackc/pgtype v1.7.0 // indirect
-	github.com/jackc/pgx v3.6.2+incompatible // indirect
 	github.com/jackc/pgx/v4 v4.11.0 // indirect
 	github.com/joho/godotenv v1.3.0 // indirect
 	github.com/kr/fs v0.1.0 // indirect
