@@ -51,7 +51,7 @@ func HandleRequests(db db.Database) {
 
 	handler := c.Handler(r)
 	
-	log.Fatal(http.ListenAndServe(os.Getenv("PORT"), handler))
+	log.Fatal(http.ListenAndServe(":" + os.Getenv("PORT"), handler))
 }
 
 func runQuery (w http.ResponseWriter, r *http.Request) {
