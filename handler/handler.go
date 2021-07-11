@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 	"github.com/peterphanouvong/hst/db"
@@ -23,7 +24,7 @@ func HandleRequests(db db.Database) {
 	dbInstance = db
 	fmt.Println(dbInstance)
 	fmt.Println("handle requests")
-	addr := ":10000"
+	// addr := ":10000"
 	r := mux.NewRouter()
 	r.HandleFunc("/query", runQuery).Methods("POST")
 	addPeopleHandler(r)
@@ -50,7 +51,7 @@ func HandleRequests(db db.Database) {
 
 	handler := c.Handler(r)
 	
-	log.Fatal(http.ListenAndServe(addr, handler))
+	log.Fatal(http.ListenAndServe(os.Getenv("PORT"), handler))
 }
 
 func runQuery (w http.ResponseWriter, r *http.Request) {
